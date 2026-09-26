@@ -6,10 +6,11 @@ Perl Language client for Language Server Protocol through [coc.nvim](https://git
 
 ## Language Servers support
 
-This project supports two different language servers:
+This project supports three different language servers:
 
 1. [Perl-LanguageServer](https://github.com/richterger/Perl-LanguageServer);
-2. [PerlNavigator](https://github.com/bscan/PerlNavigator).
+2. [pls](https://github.com/FractalBoy/perl-language-server).
+3. [PerlNavigator](https://github.com/bscan/PerlNavigator).
 
 Being that each has its own characteristics and are differentiated through the way you enable and configure them in
 CoC configuration file.
@@ -106,6 +107,16 @@ And for `navigator`:
     "perlnavigator.enable": true,
 }
 ```
+
+For enabling the new `pls` server (perl-language-server):
+
+```json
+{
+   "pls.enable": true
+}
+```
+
+This new server requires `cpanm` command to install dependencies and `make` to compile. The installation will be performed automatically when you enable this server.
 
 If you're using a development branch of `navigator`, manually downloaded and/or installed, you'll need one additional
 option: the server absolute path.

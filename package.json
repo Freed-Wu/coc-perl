@@ -30,7 +30,9 @@
 		"src/extension.ts",
 		"src/p_ls.ts",
 		"src/navigator.ts",
-		"src/config.ts"
+		"src/config.ts",
+		"src/pls.ts",
+		"src/pls-installer.ts"
 	],
 	"main": "dist/extension.js",
 	"contributes": {
@@ -384,6 +386,38 @@
 					"type": "integer",
 					"default": 100,
 					"description": "if debugAdapterPort is in use try ports from debugAdapterPort to debugAdapterPort + debugAdapterPortRange. Default 100."
+				},
+				"pls.enable": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable PLS (perl-language-server) server."
+				},
+				"pls.serverPath": {
+					"type": "string",
+					"default": "",
+					"description": "Full path to the PLS server binary (no aliases, .bat files or ~/). Defaults to bundled pls/server/bin/pls."
+				},
+				"pls.perlPath": {
+					"scope": "resource",
+					"type": "string",
+					"default": "perl",
+					"description": "Full path to the perl executable for PLS server (no aliases, .bat files or ~/)."
+				},
+				"pls.logLevel": {
+					"type": "integer",
+					"default": 0,
+					"description": "Log level for PLS server (0-4)"
+				},
+				"pls.logFile": {
+					"type": "string",
+					"default": "",
+					"description": "If set, PLS log output is written to the given logfile instead of stderr."
+				},
+				"pls.includePaths": {
+					"scope": "resource",
+					"type": "array",
+					"default": [],
+					"description": "Array of paths added to @INC for PLS server. You can use $workspaceFolder as a placeholder."
 				}
 			}
 		},
